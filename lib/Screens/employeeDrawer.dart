@@ -18,7 +18,7 @@ class employeeDrawerState extends State<employeeDrawer> {
       appBar: AppBar(
         title: Text('Employee Management'),
       ),
-      body: Center(child: Text('Welcome To PXP Channel')),
+      body: Center(child: Text('Bienvenue Da Antonio')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.only(top: minimumPadding, bottom: minimumPadding),
@@ -39,7 +39,7 @@ class employeeDrawerState extends State<employeeDrawer> {
               },
             ),
             ListTile(
-              title: Text('Get Employees'),
+              title: Text('Lister Employees'),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => getemployees()));

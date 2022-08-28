@@ -14,7 +14,7 @@ class registerEmployee extends StatefulWidget {
 
 Future<EmployeeModel> registerEmployees(
     String firstName, String lastName, BuildContext context) async {
-  var Url = "http://localhost:8080/addemployee";
+  var Url = "http://10.0.2.2:8080/addemployee";
   var response = await http.post(Url,
       headers: <String, String>{"Content-Type": "application/json"},
       body: jsonEncode(<String, String>{
@@ -62,12 +62,12 @@ class registerEmployeeState extends State<registerEmployee> {
                     controller: firstController,
                     validator: (String value) {
                       if (value.isEmpty) {
-                        return 'please enter your name';
+                        return "S'il vous plait entrez votre nom";
                       }
                     },
                     decoration: InputDecoration(
-                        labelText: 'First Name',
-                        hintText: 'Enter Your First Name',
+                        labelText: 'Prénom',
+                        hintText: 'Entrez votre prénom',
                         labelStyle: textStyle,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0))),
@@ -80,12 +80,12 @@ class registerEmployeeState extends State<registerEmployee> {
                     controller: lastController,
                     validator: (String value) {
                       if (value.isEmpty) {
-                        return 'please enter your name';
+                        return "S'il vous plait entrez votre nom";
                       }
                     },
                     decoration: InputDecoration(
-                        labelText: 'Last Name',
-                        hintText: 'Enter Your First Name',
+                        labelText: 'Nom',
+                        hintText: 'Entrez votre nom',
                         labelStyle: textStyle,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0))),

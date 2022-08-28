@@ -18,7 +18,7 @@ class updateEmployee extends StatefulWidget {
 
 Future<EmployeeModel> updateEmployees(
     EmployeeModel employee, BuildContext context) async {
-  var Url = "http://localhost:8080/updateemployee";
+  var Url = "http://10.0.2.2:8080/updateemployee";
   var response = await http.put(Url,
       headers: <String, String>{"Content-Type": "application/json"},
       body: jsonEncode(employee));
@@ -76,7 +76,7 @@ class updateEmployeeState extends State<updateEmployee> {
                         enabled: _isEnabled,
                         validator: (String value) {
                           if (value.isEmpty) {
-                            return 'please enter your ID';
+                            return "S'il vous plait entrez votre ID";
                           }
                         },
                         decoration: InputDecoration(
@@ -94,12 +94,12 @@ class updateEmployeeState extends State<updateEmployee> {
                         controller: firstController,
                         validator: (String value) {
                           if (value.isEmpty) {
-                            return 'please enter your name';
+                            return "S'il vous plait entrez votre nom";
                           }
                         },
                         decoration: InputDecoration(
-                            labelText: 'First Name',
-                            hintText: 'Enter Your First Name',
+                            labelText: 'Prénom',
+                            hintText: 'Entrez votre prénom',
                             labelStyle: textStyle,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
@@ -112,12 +112,12 @@ class updateEmployeeState extends State<updateEmployee> {
                         controller: lastController,
                         validator: (String value) {
                           if (value.isEmpty) {
-                            return 'please enter your name';
+                            return "S'il vous plait entrez votre nom";
                           }
                         },
                         decoration: InputDecoration(
-                            labelText: 'Last Name',
-                            hintText: 'Enter Your First Name',
+                            labelText: 'Nom',
+                            hintText: 'Entrez votre nom',
                             labelStyle: textStyle,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
